@@ -15,16 +15,21 @@ public class Main {
             }
         }
         while (userInput < 1);
+        calculations(userInput);
+
+    }
+//method calc
+    private static void calculations(int userInput) {
         int numberOfBoxes = (int) Math.ceil(userInput / 5.0);
         int cost;
         if (numberOfBoxes <= 5) {
-            cost = 5;
-        } else
             cost = 8;
+        } else
+            cost = 5;
         int total = numberOfBoxes * cost;
 
         int full;
-        int not_full = userInput%5;
+        int not_full = userInput %5;
         if (not_full == 0)
             full = numberOfBoxes;
         else
@@ -32,6 +37,8 @@ public class Main {
         System.out.print("You will receive " + numberOfBoxes + " box/es, " + full + " box/es containing 5 books ");
 
         if (not_full > 0)
-         System.out.println("and 1 box containing " + not_full + " books.");
+         System.out.println("and 1 box containing " + not_full + " book(s).");
+
+        System.out.println("The shipping price will be: " + total + " SEK");
     }
 }
