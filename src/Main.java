@@ -5,15 +5,17 @@ public class Main {
     public static void main(String[] args) {
         // variable to be used later
         int userInput = 0;
+        Scanner scanner = new Scanner(System.in);
+
         do {
             System.out.println("How many books do you have for shipping?");
-            Scanner scanner = new Scanner(System.in);
             /* nextInt only accepts integers catches the error */
             try {
                 userInput = scanner.nextInt();
                 //checking that input is an int
             } catch (InputMismatchException e) {
                 System.out.println("Not a valid number, try again");
+                scanner.next();
             }
         }
         //as long as user input is less than 1 we continue doing this process ^^

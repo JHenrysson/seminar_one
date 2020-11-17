@@ -13,6 +13,7 @@ public class Task_Two {
             //nextInt only accepts integers catches the error
             try {
                 userInput = scanner.nextInt();
+
             } catch (InputMismatchException e) {
                 System.out.println("Not a valid number, try again");
             }
