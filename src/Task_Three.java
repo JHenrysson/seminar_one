@@ -25,24 +25,22 @@ public class Task_Three {
             Scanner scanner = new Scanner(System.in);
 
             try {
-                remainingMileage = scanner.nextInt() * 10;
+                remainingMileage = scanner.nextInt() * 10; // 10 km = 1 mile converts km to mil
             } catch (InputMismatchException e) {
                 System.out.println("Not valid, try again");
             }
-            //holds the length of time to travel
-            double time = remainingMileage / averageSpeed;
-            // we get the hours by using floor to the nearest int == hours
-            // calculating the minutes by subtracting the hours from the time.
-            // This means that if we had 2.3, we will now have 0.3.
-            // Then multiply this number by 60 to get the minutes.
-            hourLeft = (int) Math.floor(time);
-            minutesLeft = (int) Math.round((time - hourLeft) * 60);
 
-        }while (remainingMileage <= 0) ;
+        } while (remainingMileage <= 0);
+        double time = remainingMileage / averageSpeed;  //divides the two numbers holds the length of time to travel
 
+        // calculating the minutes by subtracting the hours from the time.
+        // This means that if we had 2.3, we will now have 0.3.
+        hourLeft = (int) Math.floor(time); // we get the hours by using floor to the nearest int == hours
+
+        minutesLeft = (int) Math.round((time - hourLeft) * 60);  // round in case number is not even & Then multiply this number by 60 to get the minutes.
 
 
-        System.out.println("Your remaining travel time is: + "+ hourLeft +" hour(s) and "+ minutesLeft +" minutes.");
-}
+        System.out.println("Your remaining travel time is: " + hourLeft + " hour(s) and " + minutesLeft + " minutes.");
+    }
 }
 
